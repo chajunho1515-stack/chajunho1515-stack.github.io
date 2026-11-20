@@ -8,8 +8,19 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="차준호 국어 | 2028학년도 수능 국어 정규반">
 <meta property="og:description" content="출제의 언어로 독해하라. 수업 방식, 교재, 2028학년도 커리큘럼, 입반 안내.">
-<meta property="og:image" content="img/profile.jpg">
+<meta property="og:url" content="https://chajunho1515-stack.github.io/">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="차준호 국어">
+<meta property="og:image" content="https://chajunho1515-stack.github.io/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://chajunho1515-stack.github.io/">
+<link rel="icon" type="image/png" sizes="48x48" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<meta name="format-detection" content="telephone=no">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
@@ -17,13 +28,15 @@
 /* critique: one idea per section, the real textbook pages carry the proof, nothing a parent has to pinch-zoom to read except the textbook crops which open full size on tap */
 :root{
   --bg:#000000; --bg2:#141414; --ink:#FFFFFF; --ink2:#C9C9C9; --muted:#8C8C8C; --rule:#333333;
-  --yellow:#FFC107; --yellow-ink:#000000; --paper:#FFFFFF;
+  --yellow:#FFC107; --yellow-ink:#000000; --paper:#FFFFFF; --tap:rgba(255,193,7,.28);
   --font:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
   --wrap:1080px; --gut:20px;
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;overflow-x:clip;background:var(--bg);color:var(--ink)}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;color-scheme:dark;scroll-padding-top:56px}
+::selection{background:var(--yellow);color:var(--yellow-ink)}
+a{-webkit-tap-highlight-color:var(--tap)}
 body{font-family:var(--font);font-size:17px;line-height:1.65;word-break:keep-all;font-weight:400}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
@@ -36,7 +49,9 @@ p{margin:0}
 .y{color:var(--yellow)}
 .sub{color:var(--ink2)}
 .nb{white-space:nowrap}
-.note{font-size:14px;color:var(--muted);line-height:1.6}
+.note{font-size:14px;color:var(--muted);line-height:1.6;max-width:44em}
+.hj{font-weight:400;font-size:.78em;color:var(--muted);margin-left:.25em;letter-spacing:0}
+.tl b,.when,.kv li > span,.mid,.note{font-variant-numeric:tabular-nums}
 
 /* 머리 */
 .top{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--rule)}
@@ -75,15 +90,19 @@ section + section{border-top:1px solid var(--rule)}
 
 /* 실물 */
 .proof{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin-top:28px;align-items:start}
-.shot{display:block;border:1px solid var(--rule);background:var(--paper)}
+.shot{display:block;position:relative;border:1px solid var(--rule);background:var(--paper);text-decoration:none}
 .shot img{width:100%}
+.shot .zoom{position:absolute;right:8px;bottom:8px;display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 12px 0 10px;background:var(--bg);color:var(--ink);font-weight:800;font-size:13px;line-height:1;transition:background-color .15s ease,color .15s ease}
+.shot .zoom svg{width:14px;height:14px;flex:none}
+.shot:hover .zoom,.shot:focus-visible .zoom{background:var(--yellow);color:var(--yellow-ink)}
+.shot:hover{border-color:var(--yellow)}
 .cap{font-size:14px;color:var(--muted);margin-top:8px}
 
 /* 교재 */
 .kv{list-style:none;margin:28px 0 0;padding:0;border-top:3px solid var(--ink)}
 .kv li{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding:16px 0;border-bottom:1px solid var(--rule)}
 .kv b{font-weight:800;font-size:19px;line-height:1.35}
-.kv li > span{color:var(--ink2);font-size:16px;line-height:1.55}
+.kv li > span{color:var(--ink2);font-size:16px;line-height:1.55;max-width:40em}
 
 /* 커리큘럼 */
 .season{margin-top:28px;border-top:3px solid var(--ink);padding-top:18px}
@@ -94,7 +113,7 @@ section + section{border-top:1px solid var(--rule)}
 .rows dt{font-weight:800;color:var(--yellow);font-size:16px;margin:0}
 .rows dd{margin:0}
 .rows dd strong{display:block;font-weight:800;font-size:17px;line-height:1.4}
-.rows dd > span{display:block;color:var(--ink2);font-size:15px;line-height:1.55;margin-top:4px}
+.rows dd > span{display:block;color:var(--ink2);font-size:15px;line-height:1.55;margin-top:4px;max-width:42em}
 .mid{margin-top:28px;border:1px dashed var(--rule);padding:16px}
 .mid b{font-weight:800}
 
@@ -109,6 +128,9 @@ section + section{border-top:1px solid var(--rule)}
 footer{padding:48px 0 64px;border-top:1px solid var(--rule)}
 footer .last{font-weight:800;font-size:clamp(26px,7vw,44px);line-height:1.2;letter-spacing:-0.02em}
 footer .who{color:var(--muted);font-size:14px;margin-top:18px}
+footer .who + .who{margin-top:4px}
+footer a{color:var(--ink2);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-variant-numeric:tabular-nums}
+footer a:hover{color:var(--yellow)}
 
 @media (min-width:820px){
   :root{--gut:40px}
@@ -123,7 +145,12 @@ footer .who{color:var(--muted);font-size:14px;margin-top:18px}
   .proof{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:40px}
   .proof.flip{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr)}
   .kv li{grid-template-columns:260px minmax(0,1fr);gap:24px}
-  .rows div{grid-template-columns:88px minmax(0,1fr)}
+  .rows div{grid-template-columns:88px minmax(0,1fr);padding:16px 0}
+  .rows dt{font-size:17px}
+  .rows dd strong{font-size:19px}
+  .rows dd > span{font-size:16px}
+  .season .when,.kv li > span,.four p{font-size:17px}
+  .note,.cap{font-size:15px}
   .join .box{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
@@ -151,7 +178,7 @@ footer .who{color:var(--muted);font-size:14px;margin-top:18px}
         <a class="btn ghost" href="#curriculum">2028 커리큘럼</a>
       </div>
     </div>
-    <img class="photo" src="img/profile.jpg" alt="차준호 강사" width="900" height="1125">
+    <img class="photo" src="img/profile.jpg" alt="차준호 강사" width="900" height="1125" fetchpriority="high">
   </div>
 </div>
 
@@ -187,13 +214,13 @@ footer .who{color:var(--muted);font-size:14px;margin-top:18px}
     <h2>같은 지문을 어떻게 읽는지,<br>문장마다</h2>
     <div class="proof">
       <div>
-        <a class="shot" href="img/analysis.png"><img src="img/analysis.png" alt="분석서 실물. 문장 번호마다 그 문장에서 잡아야 할 것을 적어 둔 글" width="1285" height="945" loading="lazy"></a>
-        <p class="cap">분석서 실물입니다. 누르면 크게 보입니다.</p>
+        <a class="shot" href="img/analysis.png"><img src="img/analysis.png" alt="분석서 실물. 문장 번호마다 그 문장에서 잡아야 할 것을 적어 둔 글" width="1285" height="945" loading="lazy" decoding="async"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6.8" cy="6.8" r="4.6"/><path d="M10.4 10.4 14.5 14.5"/></svg>크게 보기</span></a>
+        <p class="cap">분석서 실물입니다.</p>
       </div>
       <div>
         <h3>분석서</h3>
         <p class="sub" style="margin-top:10px">아이는 혼자 풀고 나서 자기 읽기와 이 글을 한 줄씩 대봅니다. 어디서 문제가 생겼는지가 보입니다. 수업 교재뿐 아니라 주간지 과제에도 들어가고, 한 줄 한 줄 직접 씁니다.</p>
-        <a class="shot" href="img/analysis-note.png" style="margin-top:20px"><img src="img/analysis-note.png" alt="분석서의 파란 상자. 아이에게 건네는 말" width="556" height="212" loading="lazy"></a>
+        <div class="shot" style="margin-top:20px"><img src="img/analysis-note.png" alt="분석서의 파란 상자. 아이에게 건네는 말" width="556" height="212" loading="lazy" decoding="async"></div>
         <p class="cap">파란 상자는 아이에게 하는 말이라 반말로 씁니다.</p>
       </div>
     </div>
@@ -203,8 +230,8 @@ footer .who{color:var(--muted);font-size:14px;margin-top:18px}
         <p class="sub" style="margin-top:10px">정답 따로, 오답 선지 다섯 개 각각 따로. 어느 문단 어느 문장 때문에 틀렸는지까지 써서 문항 하나에 천 자가 넘습니다.</p>
       </div>
       <div>
-        <a class="shot" href="img/explain.png"><img src="img/explain.png" alt="해설 실물. 정답 해설과 오답 선지별 해설" width="1320" height="1290" loading="lazy"></a>
-        <p class="cap">해설 실물입니다. 누르면 크게 보입니다.</p>
+        <a class="shot" href="img/explain.png"><img src="img/explain.png" alt="해설 실물. 정답 해설과 오답 선지별 해설" width="1320" height="1290" loading="lazy" decoding="async"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6.8" cy="6.8" r="4.6"/><path d="M10.4 10.4 14.5 14.5"/></svg>크게 보기</span></a>
+        <p class="cap">해설 실물입니다.</p>
       </div>
     </div>
   </div>
@@ -229,7 +256,7 @@ footer .who{color:var(--muted);font-size:14px;margin-top:18px}
     <p class="lead">기점에서 배우고, 단련에서 적용하고, 파이널에서 각자의 한 끗을 채웁니다.</p>
 
     <div class="season">
-      <h3>기점 起點</h3>
+      <h3>기점 <span class="hj" lang="zh-Hant">起點</span></h3>
       <p class="when">12월 26일 개강, 3월 학평 직전까지. 여기서 배웁니다.</p>
       <dl class="rows">
         <div><dt>독서</dt><dd><strong>출제자의 시선으로 사고를 재설계하다</strong><span>평가원, LEET, PSAT 고난도 지문으로 독해 감각을 만들고, 여러 지문의 공통 독해 포인트로 일관된 독해 태도를 세웁니다.</span></dd></div>
@@ -240,7 +267,7 @@ footer .who{color:var(--muted);font-size:14px;margin-top:18px}
     </div>
 
     <div class="season">
-      <h3>단련 鍛鍊</h3>
+      <h3>단련 <span class="hj" lang="zh-Hant">鍛鍊</span></h3>
       <p class="when">3월 27일 ~ 8월 7일, 수업 12주. 여기서 적용합니다.</p>
       <dl class="rows">
         <div><dt>독서</dt><dd><strong>고난도 독해를 통한 사고의 입체화</strong><span>영역별 기출 분석으로 취약 제재의 독해 자신감과 배경지식을 만들고, <span class="nb">수특·수완</span> 필수 지문에 기점의 읽는 법을 그대로 적용합니다.</span></dd></div>
@@ -304,6 +331,7 @@ footer .who{color:var(--muted);font-size:14px;margin-top:18px}
   <div class="wrap">
     <p class="last">잘하는 데서<br>멈추지 않겠습니다</p>
     <p class="who">차준호 T, 2028학년도 수능 국어 정규반</p>
+    <p class="who">등록과 상담은 대찬학원 <a href="tel:025542772">02-554-2772</a></p>
   </div>
 </footer>
 
