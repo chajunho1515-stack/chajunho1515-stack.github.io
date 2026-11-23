@@ -104,6 +104,20 @@ section + section{border-top:1px solid var(--rule)}
 .kv b{font-weight:800;font-size:19px;line-height:1.35}
 .kv li > span{color:var(--ink2);font-size:16px;line-height:1.55;max-width:40em}
 
+/* 수강 후기 */
+.rv{margin-top:32px;border-top:3px solid var(--ink);padding-top:18px}
+.rv .who{font-weight:800;font-size:16px;color:var(--yellow)}
+.rv .say{margin:10px 0 0;font-weight:800;font-size:clamp(21px,5.6vw,30px);line-height:1.38;letter-spacing:-0.02em;max-width:27em}
+.rv details{margin-top:18px}
+.rv summary{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border:2px solid var(--ink);border-radius:2px;font-weight:800;font-size:15px;cursor:pointer;list-style:none;transition:background-color .15s ease,color .15s ease}
+.rv summary::-webkit-details-marker{display:none}
+.rv summary::after{content:"+";font-size:18px;line-height:1}
+.rv details[open] summary::after{content:"\2212"}
+.rv summary:hover{background:var(--ink);color:var(--bg)}
+.rv .full{margin-top:18px;color:var(--ink2);font-size:16px;line-height:1.78;max-width:40em}
+.rv .full p + p{margin-top:14px}
+.rv mark{background:none;color:var(--yellow);font-weight:600}
+
 /* 커리큘럼 */
 .season{margin-top:28px;border-top:3px solid var(--ink);padding-top:18px}
 .season.hi{border-top-color:var(--yellow)}
@@ -149,6 +163,7 @@ footer a:hover{color:var(--yellow)}
   .rows dt{font-size:17px}
   .rows dd strong{font-size:19px}
   .rows dd > span{font-size:16px}
+  .rv .full{font-size:17px}
   .season .when,.kv li > span,.four p{font-size:17px}
   .note,.cap{font-size:15px}
   .join .box{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
@@ -175,6 +190,7 @@ footer a:hover{color:var(--yellow)}
       <p class="slogan">출제의 언어로 독해하라</p>
       <div class="acts">
         <a class="btn" href="#join">등록 안내</a>
+        <a class="btn ghost" href="#reviews">수강 후기</a>
         <a class="btn ghost" href="#curriculum">2028 커리큘럼</a>
       </div>
     </div>
@@ -246,6 +262,59 @@ footer a:hover{color:var(--yellow)}
       <li><b><span class="nb">화법·언어·작문</span> 주간지</b><span>매주 두 세트.</span></li>
       <li><b class="y">여름과 가을에는</b><span>시대인재 서바이벌 모의고사, 엑셀러레이터, 연계 반영 문학 하프 모의고사 등 교재가 추가됩니다.</span></li>
     </ul>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <h2>수능을 치른 학생들이<br>직접 쓴 수강 후기</h2>
+    <p class="lead">2027학년도 수능이 끝난 뒤 학생 세 명이 쓴 글입니다.</p>
+
+    <article class="rv">
+      <p class="who">숙명여고 ○○○</p>
+      <p class="say">“문학도 선생님께서 알려주신 대로 풀다 보니 남들보다 더 빨리 풀 수 있게 되어 훨씬 여유있는 시간 운용이 가능했습니다.”</p>
+      <details>
+        <summary>전문 읽기</summary>
+        <div class="full">
+          <p>저는 원래 1, 2학년 중반까지는 항상 국어 모의고사에서 1등급을 받았는데, 난도가 높아지면서 점수가 조금씩 떨어지더니 처음으로 2등급을 받았습니다. 그때 처음으로 국어에서 위기감을 느꼈던 것 같습니다.</p>
+          <p>2학년 겨울방학이 되면 주변 친구들이 여기저기 일타강사의 수업으로 흩어지는데, 저는 차준호 선생님의 반에 등록했었습니다. 애초에 대형 강의를 선호하지 않기도 하고, 이미 전에 지문 내용을 달달 설명해 주는 수업을 경험해 봤기에 ‘문제 푸는 방법’을 배우고 싶었습니다. 유명한 수업이 아니라서 고민도 됐지만 한 번 가보지 뭐! 라는 마음으로 수업에 갔었습니다.</p>
+          <p>저는 1년 동안 토요일 아침 수업을 들었는데, 처음 몇 주 동안은 수업이 너무 어렵고 따라가기가 힘들었습니다. 아침이라 글이 안 읽히는 건 둘째 치고 어려운 평가원이나 리트 지문들로 수업을 해서 한 세트에 반을 틀리는 제 모습에 속상하기도 했습니다. 원래도 비문학이 약해서 더 힘들었던 거 같습니다.</p>
+          <p>그래서 겨울방학 동안 아침에 독서실에 가면 무조건 오전 시간 동안은 선생님께서 숙제로 내주신 주간지를 풀었습니다. 어려운 평가원 지문이나 리트 지문 등이 있었지만 시간은 신경 쓰지 않고 풀었고, 풀고 난 뒤에는 아무리 어려운 글이라도 완전히 이해한다는 생각으로 분석했습니다. 특히 지문을 읽을 때 선생님께서 수업 때 알려주신 방법들을 그대로 적용한다는 생각을 항상 했던 것 같습니다. 그러다 보니 <mark>점점 한 세트에서 맞히는 문제 수가 늘어갔고, 지문 위에 적히는 소요 시간도 점차 줄어갔습니다.</mark> 그렇게 조금씩 발전해가는 제 모습을 보면서 뿌듯했습니다.</p>
+          <p>그러다가 처음으로 수업 때 사설 모고를 풀었는데 점수가 70점대로 나왔던 기억이 납니다. 나름 실력이 많이 발전했다고 생각했는데, 시험 도중 고민하던 두 선지 중 답이 아닌 것을 고른 게 많고, 자신 있던 문학도 많이 틀려서 좌절했습니다. 그때 <mark>선생님께서 시험 도중 문제를 풀며 한 생각들을 적은 뒤 상담하자고 하셨고, 그 뒤에 실력이 많이 상승해서 다음에 본 모의고사는 1등급을 받았던 기억이 납니다.</mark></p>
+          <p>문학도 선생님께서 알려주신 대로 풀다 보니 남들보다 더 빨리 풀 수 있게 되어 훨씬 여유있는 시간 운용이 가능했습니다. 그 뒤에는 국어에 대한 자신감이 붙어 걱정이 없었는데, 수능이 임박해 오면서 걱정이 생길 때마다 선생님께서 잘 잡아주신 덕분에 수능 때도 좋은 성적을 받을 수 있었던 것 같습니다.</p>
+          <p>선생님께서 중요하다고 선별해주신 수특 지문들이 도움이 많이 되었고, <mark>주셨던 주간지들을 그냥 있는 대로 다 풀다보니 연계공부가 저절로 되었습니다.</mark></p>
+          <p>1년 동안 선생님 수업을 들으면서 <mark>한 번도 후회한 적이 없었기에</mark> 내년 후배들도 선생님 수업을 듣고 저처럼 국어에 자신감을 가질 수 있게 되었으면 좋겠습니다!</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="rv">
+      <p class="who">중동고 ○○○</p>
+      <p class="say">“1년 동안 차준호 선생님 수업을 들은 후 실력이 많이 늘어 수능 때 언매 98점을 받을 수 있었습니다.”</p>
+      <details>
+        <summary>전문 읽기</summary>
+        <div class="full">
+          <p>우선 감사하다는 말씀부터 드려야 할 것 같습니다. 아마 이 동네 학생들은 대부분 비슷한 고민들을 가지고 있을 테지만, 저 또한 <mark>수학이랑 과학탐구는 성적이 잘 나왔으나 국어만은 늘 불안한 과목이었습니다.</mark> 실력도 실력이지만, 어렸을 때부터 항상 국어를 못한다는 인식 때문에 자신감이 없어서 더 그랬던 것 같습니다. 그렇지만 1년 동안 차준호 선생님 수업을 들은 후 실력이 많이 늘어 수능 때 언매 98점을 받을 수 있었습니다. 다시 한 번 감사드립니다.</p>
+          <p>고3이 된 후 차준호 선생님을 처음 만나고, 첫 번째로 수업하셨던 지문 ‘에이어의 도덕 문장’이 아직도 기억납니다. 정말 충격이었습니다. 그 동안 글을 완전히 잘못 읽고 있었구나 라는 사실을 깨달은 순간이었습니다. 그 날 마지막으로 푼 지문 ‘플라톤과 아퀴나스의 진리’ 도 세 문제 전부를 틀리고, 다른 아이들은 다 맞는 모습을 보며 ‘과연 잘할 수 있을까’라는 생각이 들었지만, 이 선생님께 1년 동안 수업을 들으면 실력이 매우 오를 것이라고 생각하여 다음 주에도 등원하게 되었습니다.</p>
+          <p>선생님의 모든 자료 중 가장 도움이 되었던 것은 겨울방학 때 했던 ‘기점’이었습니다. 기점은 그 동안 기출되었던 지문들에 대한 선생님의 생각을 문장 단위로 해석해놓은 책으로, 저는 <mark>1년 동안 기점을 4번 정도 본 것 같습니다.</mark> 회독을 거듭할때마다 모든 문장에서 최대한 선생님과 똑같은 생각을 하기 위해 노력했고, 결곡 마지막 회독때는 <mark>해석을 보지 않고도 선생님과 똑같이 읽을 수 있게 되었습니다.</mark></p>
+          <p>내년에 후배들이 들어온다면, 이런 말을 해주고 싶습니다. ‘1년 동안 선생님 수업을 듣는 것은 정말 힘들 것이다. 선천적으로 재능이 압도적인 사람의 수업을 들으며, 자신도 그렇게 하지 못한다는 것을 알아가는 과정은 정말 힘들 것이다. 그러나, 수능 때까지 수업을 따라가기만 해도 압도적인 실력을 갖출 수 있을 것이다. <mark>선생님 믿고 1년만 다녀봐라.</mark>’ 이상입니다.</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="rv">
+      <p class="who">경기여고 ○○○</p>
+      <p class="say">“글의 구조 자체로 중요한 내용을 찾아내면 집중이 깨지는 상황에서도, 난이도가 높은 지문이여도 떠올릴 수 있습니다.”</p>
+      <details>
+        <summary>전문 읽기</summary>
+        <div class="full">
+          <p>모의고사를 풀 때는 자연스럽게 보이고 떠올랐던 생각들이 수능 시험장에서는 매 해 전혀 떠오르지 않는 것이 가장 큰 고민이었습니다. 이를 개선하기 위해 여러 수업을 들었지만, 대부분 지문의 어떤 부분을 봤어야 하는지 설명하거나 어떻게하면 깊은 이해가 가능했는지를 설명했습니다. 그리고 강사의 사고과정 자체를 모방하라고 했습니다. 그러나 저의 경우 집중이 잘 되고 마음이 편안한 상황에서는 그런 내용들을 이미 대부분 떠올렸거나, 되려 익숙하지 않은 발상을 시도하느라 점수가 하락하기도 했습니다. 풀이 당시의 사고과정을 자세히 복기해 선생님들 해설과 비교해 보아도, 모의고사에서는 항상 봐야될 것을 보고 해야될 일을 했기 때문에 수능에서의 멘탈 관리를 탓하는 것 말고는 할 수 있는일이 없다고 느꼈습니다.</p>
+          <p>중요한 글자의 위치를 매 지문의 내용적 특성에서 찾는 것은 모의고사에서나 가능합니다. 그런데 글의 구조 자체로 중요한 내용을 찾아내면 집중이 깨지는 상황에서도, 난이도가 높은 지문이여도 떠올릴 수 있습니다.이러한 점에서 <mark>차준호선생님 수업은 실전적입니다.</mark> ‘특정 지문에서 특정 생각을 했어야 한다’ 를 가르치는게 아니라, <mark>“ ‘-의 경우에만’ 이라는 표현이 있으면 그 외의 경우도 떠올려봐야 한다”</mark>, “동일 문단에 동일 서술어로 다른 상황이 설명됐으면 두 상황 사이 대조 지점이 중요하다” 등을 가르치시기 때문입니다. ‘사실 작문 상황 이라면 자연스럽게 할 생각인데, 내가 문제풀이를 위해 글을 ‘읽기만’ 하니 떠올리지 못했구나’ 를 한 두 번 인지하는 것 만으로도 수업 내용을 바로 실전에 적용할 수 있었습니다.</p>
+          <p>뿐 만 아니라 is all you need 교재와 취약지문 보완 주간지도 큰 도움이 되었습니다. <mark>한 문장 마다 구어체로 쓰여있는 해설을 읽으며 자연스럽게 수업 내용을 체화할 수 있었고,</mark> 취약한 소재의 고난도 지문을 몰아 풀며 풀이 방향을 일관화 하고 자신감을 얻을 수 있었습니다.</p>
+          <p>선생님 수업을 처음 듣고 꽤 오랜 시간 복습했던 기억이 납니다. 저와 비슷한 고민을 가진 수험생이라면 분명 많은 것을 얻어갈 수 있으리라고 생각합니다. 행운을 빕니다.</p>
+        </div>
+      </details>
+    </article>
   </div>
 </section>
 
